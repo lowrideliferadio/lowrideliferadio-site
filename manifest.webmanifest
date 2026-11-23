@@ -1,0 +1,16 @@
+{
+  "name": "Lowride Life Radio",
+  "short_name": "Lowride Radio",
+  "description": "Underground hip hop internet radio, live 24/7.",
+  "start_url": "/?source=homescreen",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#07050b",
+  "theme_color": "#0b0712",
+  "icons": [
+    {"src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png"},
+    {"src": "assets/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Lowride Life Radio — underground hip hop internet radio, live 24/7</title>
+<meta name="description" content="Lowride Life Radio - underground hip hop internet radio, live 24/7. Tune in from your car stereo deck, request songs and see who's listening worldwide.">
+<meta name="theme-color" content="#0b0712">
+<meta property="og:title" content="Lowride Life Radio"><meta property="og:description" content="Underground hip hop internet radio, live 24/7.">
+<meta property="og:image" content="https://lowrideliferadio.com/assets/og.jpg"><meta property="og:url" content="https://lowrideliferadio.com/"><link rel="canonical" href="https://lowrideliferadio.com/"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Lowride Life Radio logo"><meta name="twitter:card" content="summary_large_image"><meta property="og:type" content="website">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Lowride Radio">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32"><link rel="icon" href="assets/favicon-48.png" sizes="48x48"><link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preload" href="assets/Orbitron.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/Rajdhani-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="assets/bg/flake-tile.webp">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="logo" href="#" aria-label="Lowride Life Radio home"><img class="llr-word" src="assets/brand/llr-wordmark.webp" alt="Lowride Life Radio" width="782" height="148"></a>
+  <nav aria-label="Sections"><a href="#schedule">Schedule</a><a href="#recent">Recent</a><a href="#requests">Requests</a><a href="#map">Map</a><a href="#djs">DJs</a></nav>
+  <span class="onair-pill"><i></i><span>ON AIR</span></span>
+</header>
+
+<div id="banner" class="banner" hidden></div>
+<main id="main">
+<section class="hero" aria-label="Player">
+  <div class="bgl" id="bgl" aria-hidden="true"><div class="bgl-media"></div><div class="bgl-fx"></div><div class="bgl-dim"></div></div>
+  <h1 class="llr-hero"><img src="assets/brand/llr-full.webp" alt="Lowride Life Radio" width="803" height="374" fetchpriority="high" decoding="async"></h1>
+  <div class="rig">
+    <p id="heroText" class="hero-text" hidden></p>
+    <div class="din"><div id="deck" class="deck" role="group" aria-label="Car stereo player"></div></div>
+    <div class="din vdin"><div id="vdeck" class="deck vdeck" role="group" aria-label="Video deck"></div></div>
+    <div class="switcher">
+      <button id="prevDeck" class="arrow" aria-label="Previous deck">‹</button>
+      <div><div class="dots" role="group" aria-label="Choose a deck"></div><div id="deckName" class="deck-name"></div></div>
+      <button id="nextDeck" class="arrow" aria-label="Next deck">›</button>
+    </div>
+    <div class="np">
+      <div class="art" aria-hidden="true"><span>ART<br>PLACEHOLDER</span></div>
+      <div class="meta"><small id="npShow">AUTO DJ</small><b id="npTitle">Lowride Life Radio</b><span id="npArtist">Underground hip hop · live 24/7</span></div>
+      <div class="lis"><b id="npLis">0</b><small>LISTENING</small></div>
+      <button class="recon" data-act="reconnect" aria-label="Reconnect the stream">↻<small>RECONNECT</small></button>
+    </div>
+    <p id="npStatus" class="np-status" role="status" hidden></p>
+    <div class="bar" role="group" aria-label="Player controls">
+      <button data-act="voldn" aria-label="Volume down">−</button>
+      <button data-act="play" class="big" aria-label="Play / pause"><svg viewBox="0 0 24 24" class="i-play"><path d="M7 5l12 7-12 7z"/></svg><svg viewBox="0 0 24 24" class="i-pause"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg></button>
+      <button data-act="volup" aria-label="Volume up">+</button>
+      <button data-act="mute" aria-label="Mute">MUTE</button>
+      <button data-act="disp" aria-label="Change display">DISP</button>
+    </div>
+    <div class="pgrid" role="group" aria-label="Presets"></div>
+    <p class="exdata">EXAMPLE DATA — preview mode</p>
+  </div>
+</section>
+
+<section id="schedule" class="sec"><h2><span>F2</span>Schedule</h2><ul id="shows" class="shows"></ul></section>
+<section id="recent" class="sec"><h2><span>F4</span>Recently played</h2><ol id="recentList" class="recent"></ol></section>
+<section id="requests" class="sec"><h2><span>F3</span>Request a song</h2>
+  <form id="reqForm" class="req" autocomplete="off">
+    <label>Song<input id="reqQ" placeholder="Search artist or title" required></label><ul id="reqList" class="reqlist"></ul>
+    <label>Your name<input id="reqName" maxlength="40"></label>
+    <label>Shout-out<input id="reqMsg" maxlength="200"></label>
+    <button type="submit" class="cta">Send request</button>
+  </form></section>
+<section id="map" class="sec"><h2><span>F5</span>Listening worldwide</h2>
+  <div class="map"><img src="assets/world-dots.webp" alt="World map of current listeners" loading="lazy" width="1000" height="394"><div id="mapDots"></div></div>
+  <p id="mapInfo" class="muted"></p><p class="fine attr">City-level only · no personal data · <a href="https://db-ip.com" rel="noopener">IP Geolocation by DB-IP</a></p></section>
+<section id="djs" class="sec"><h2>DJs</h2>
+  <ul class="djs"><li><div class="ph" aria-hidden="true">PHOTO<br>PLACEHOLDER</div><b>DJ E.T.</b><span>Afternoon Cruise · Mon–Fri</span></li>
+  <li><div class="ph" aria-hidden="true">PHOTO<br>PLACEHOLDER</div><b>Guest DJs</b><span>Underground Hour · Fri–Sat</span></li></ul></section>
+<section id="socials" class="sec"><h2><span>F6</span>Follow</h2><div id="socialLinks" class="socials"></div></section>
+</main>
+<footer class="foot"><img src="assets/logo-96.webp" alt="" width="28" height="28" loading="lazy"><span>© Lowride Life Radio · Player by E.T.TATTOO</span><a href="#main">Back to top</a></footer>
+<div id="mini" class="mini" hidden><div class="mini-art" aria-hidden="true"></div><div class="mini-t"><b id="miniTitle">Lowride Life Radio</b><span id="miniArtist">Live 24/7</span></div>
+  <button data-act="reconnect" class="mini-k" aria-label="Reconnect stream">↻</button><button data-act="play" class="mini-k play" aria-label="Play / pause"><svg viewBox="0 0 24 24" class="i-play"><path d="M7 5l12 7-12 7z"/></svg><svg viewBox="0 0 24 24" class="i-pause"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg></button></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="js/config.js"></script><script src="js/plates.js"></script><script src="js/bg.js"></script><script src="js/vfd.js" defer></script><script src="js/decks.js" defer></script><script src="js/demo.js" defer></script><script src="js/videodeck.js" defer></script><script src="js/app.js" defer></script><script src="js/touch.js" defer></script>
+</body>
+</html>
