@@ -138,6 +138,7 @@ html:not(.onair) .onair-pill{opacity:.4}
 .show{padding:12px 14px;border-radius:12px;background:#110f19;border-left:4px solid var(--c);display:grid;gap:2px}
 .show b{font-size:18px}.show span{color:var(--mute)}.show small{color:var(--gold);letter-spacing:.1em}
 .show.now{box-shadow:0 0 0 1px var(--c),0 0 24px -6px var(--c)}.show.now b::after{content:" · NOW";color:var(--pink);font-size:12px;letter-spacing:.2em}
+.show .show-desc{font-style:normal;color:var(--mute);font-size:13px;line-height:1.35;margin-top:2px}
 .recent li{display:grid;grid-template-columns:76px 1fr;column-gap:12px;padding:9px 0;border-bottom:1px solid var(--line)}
 .recent time{grid-row:span 2;color:#7fd0ff;font:700 13px Orbitron}.recent span{color:var(--mute)}
 .req{display:grid;gap:12px;max-width:560px}.req label{display:grid;gap:5px;color:var(--mute);font-size:13px;letter-spacing:.12em;text-transform:uppercase}
